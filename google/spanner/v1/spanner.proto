@@ -1164,12 +1164,7 @@ message CommitRequest {
   // Default value is `false`.
   bool return_commit_stats = 5;
 
-  google.protobuf.Duration max_commit_delay = 8 [
-    (google.api.field_visibility).restriction =
-        "GOOGLE_INTERNAL, TRUSTED_TESTER_WRITE_BATCHING",
-    (google.api.field_auditing).directive = "AUDIT",
-    (google.api.field_behavior) = OPTIONAL
-  ];
+  google.protobuf.Duration max_commit_delay = 8;
 
   // Common options for this request.
   RequestOptions request_options = 6;
