@@ -28791,6 +28791,14 @@
                 {
                   "httpMethod": "POST",
                   "path": "/v1/billingAccounts"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{parent=organizations/*}/billingAccounts"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{parent=billingAccounts/*}/subAccounts"
                 }
               ]
             },
@@ -28835,6 +28843,14 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/billingAccounts"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{parent=organizations/*}/billingAccounts"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{parent=billingAccounts/*}/subAccounts"
                 }
               ]
             },
@@ -28846,6 +28862,21 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{name=billingAccounts/*}/projects"
+                }
+              ]
+            },
+            {
+              "shortName": "MoveBillingAccount",
+              "fullName": "google.cloud.billing.v1.CloudBilling.MoveBillingAccount",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{name=billingAccounts/*}:move"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{destination_parent=organizations/*}/{name=billingAccounts/*}:move"
                 }
               ]
             },
@@ -46648,6 +46679,17 @@
               ]
             },
             {
+              "shortName": "CreateCustomTargetType",
+              "fullName": "google.cloud.deploy.v1.CloudDeploy.CreateCustomTargetType",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{parent=projects/*/locations/*}/customTargetTypes"
+                }
+              ]
+            },
+            {
               "shortName": "CreateDeliveryPipeline",
               "fullName": "google.cloud.deploy.v1.CloudDeploy.CreateDeliveryPipeline",
               "mode": "UNARY",
@@ -46703,6 +46745,17 @@
               ]
             },
             {
+              "shortName": "DeleteCustomTargetType",
+              "fullName": "google.cloud.deploy.v1.CloudDeploy.DeleteCustomTargetType",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1/{name=projects/*/locations/*/customTargetTypes/*}"
+                }
+              ]
+            },
+            {
               "shortName": "DeleteDeliveryPipeline",
               "fullName": "google.cloud.deploy.v1.CloudDeploy.DeleteDeliveryPipeline",
               "mode": "UNARY",
@@ -46754,6 +46807,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{name=projects/*/locations/*/config}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetCustomTargetType",
+              "fullName": "google.cloud.deploy.v1.CloudDeploy.GetCustomTargetType",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{name=projects/*/locations/*/customTargetTypes/*}"
                 }
               ]
             },
@@ -46842,6 +46906,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{parent=projects/*/locations/*/deliveryPipelines/*}/automations"
+                }
+              ]
+            },
+            {
+              "shortName": "ListCustomTargetTypes",
+              "fullName": "google.cloud.deploy.v1.CloudDeploy.ListCustomTargetTypes",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{parent=projects/*/locations/*}/customTargetTypes"
                 }
               ]
             },
@@ -46941,6 +47016,17 @@
                 {
                   "httpMethod": "PATCH",
                   "path": "/v1/{automation.name=projects/*/locations/*/deliveryPipelines/*/automations/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateCustomTargetType",
+              "fullName": "google.cloud.deploy.v1.CloudDeploy.UpdateCustomTargetType",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1/{custom_target_type.name=projects/*/locations/*/customTargetTypes/*}"
                 }
               ]
             },
@@ -56690,7 +56776,7 @@
         },
         "java_package": {
           "valueCounts": {
-            "google.cloud.edgenetwork.v1": 2
+            "com.google.cloud.edgenetwork.v1": 2
           }
         },
         "php_namespace": {
@@ -108395,6 +108481,59 @@
         "google.spanner.admin.instance.v1.InstanceAdmin"
       ],
       "nameInServiceConfig": "spanner.googleapis.com"
+    },
+    {
+      "id": "google.spanner.executor.v1",
+      "directory": "google/spanner/executor/v1",
+      "version": "v1",
+      "majorVersion": "v1",
+      "hostName": "spanner-cloud-executor.googleapis.com",
+      "title": "Cloud Spanner Executor test API",
+      "description": "Stop. This folder is likely not what you are looking for.  This folder contains protocol buffer definitions for test-only API for Cloud Spanner clients. Unless told otherwise by a Google Cloud representative, do not use any of the contents of this folder. If you would like to use Cloud Spanner, please consult our [official documentation](https://cloud.google.com/spanner/docs/apis) for details on our APIs, or else consider one of our [client libraries](https://cloud.google.com/spanner/docs/reference/libraries).  This API defined in this folder is unreleased and may shut off, break, or fail at any time for any users who are not registered as a part of a private preview program.",
+      "importDirectories": [
+        "google/api",
+        "google/longrunning",
+        "google/protobuf",
+        "google/rpc",
+        "google/spanner/admin/database/v1",
+        "google/spanner/admin/instance/v1",
+        "google/spanner/v1"
+      ],
+      "options": {
+        "go_package": {
+          "valueCounts": {
+            "cloud.google.com/go/spanner/executor/apiv1/executorpb;executorpb": 1
+          }
+        },
+        "java_multiple_files": {
+          "valueCounts": {
+            "true": 1
+          }
+        },
+        "java_package": {
+          "valueCounts": {
+            "com.google.spanner.executor.v1": 1
+          }
+        }
+      },
+      "services": [
+        {
+          "shortName": "SpannerExecutorProxy",
+          "fullName": "google.spanner.executor.v1.SpannerExecutorProxy",
+          "methods": [
+            {
+              "shortName": "ExecuteActionAsync",
+              "fullName": "google.spanner.executor.v1.SpannerExecutorProxy.ExecuteActionAsync",
+              "mode": "BIDIRECTIONAL_STREAMING"
+            }
+          ]
+        }
+      ],
+      "configFile": "spanner_cloud_executor.yaml",
+      "serviceConfigApiNames": [
+        "google.spanner.executor.v1.SpannerExecutorProxy"
+      ],
+      "nameInServiceConfig": "spanner-cloud-executor.googleapis.com"
     },
     {
       "id": "google.spanner.v1",

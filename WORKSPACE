@@ -456,9 +456,9 @@ gapic_generator_csharp_repositories()
 # Ruby
 ##############################################################################
 
-_gapic_generator_ruby_version = "v0.25.1"
+_gapic_generator_ruby_version = "v0.26.0"
 
-_gapic_generator_ruby_sha256 = "660557adb81ba217fd61dd634557acc40bbdd147a1b44127d19dc80e2a850463"
+_gapic_generator_ruby_sha256 = "64f7e5fac2fc27433b8d3935189dcd3106cb0945263b5abb53a7e8307517ca08"
 
 http_archive(
     name = "gapic_generator_ruby",
@@ -475,7 +475,7 @@ gapic_generator_ruby_repositories()
 # Discovery
 ##############################################################################
 
-_disco_to_proto3_converter_version = "86444dbff202cf16c80eda1ae9bd1e5d54d4915d"
+_disco_to_proto3_converter_version = "f53164598651e55a85a17692768cab1915713c83"
 
 http_archive(
     name = "com_google_disco_to_proto3_converter",
