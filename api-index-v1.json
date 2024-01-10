@@ -9756,6 +9756,17 @@
               ]
             },
             {
+              "shortName": "GetSubpropertyEventFilter",
+              "fullName": "google.analytics.admin.v1alpha.AnalyticsAdminService.GetSubpropertyEventFilter",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{name=properties/*/subpropertyEventFilters/*}"
+                }
+              ]
+            },
+            {
               "shortName": "ListAccessBindings",
               "fullName": "google.analytics.admin.v1alpha.AnalyticsAdminService.ListAccessBindings",
               "mode": "UNARY",
@@ -10009,6 +10020,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1alpha/{parent=properties/*}/searchAds360Links"
+                }
+              ]
+            },
+            {
+              "shortName": "ListSubpropertyEventFilters",
+              "fullName": "google.analytics.admin.v1alpha.AnalyticsAdminService.ListSubpropertyEventFilters",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{parent=properties/*}/subpropertyEventFilters"
                 }
               ]
             },
@@ -10292,6 +10314,17 @@
                 {
                   "httpMethod": "PATCH",
                   "path": "/v1alpha/{search_ads_360_link.name=properties/*/searchAds360Links/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateSubpropertyEventFilter",
+              "fullName": "google.analytics.admin.v1alpha.AnalyticsAdminService.UpdateSubpropertyEventFilter",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1alpha/{subproperty_event_filter.name=properties/*/subpropertyEventFilters/*}"
                 }
               ]
             }
@@ -13095,23 +13128,23 @@
       "options": {
         "go_package": {
           "valueCounts": {
-            "google.golang.org/genproto/googleapis/apps/drive/labels/v2;labels": 8
+            "google.golang.org/genproto/googleapis/apps/drive/labels/v2;labels": 11
           }
         },
         "java_multiple_files": {
           "valueCounts": {
-            "true": 8
+            "true": 11
           }
         },
         "java_package": {
           "valueCounts": {
-            "com.google.apps.drive.labels.v2": 8
+            "com.google.apps.drive.labels.v2": 11
           }
         },
         "objc_class_prefix": {
           "valueCounts": {
             "": 2,
-            "DLBL": 6
+            "DLBL": 9
           }
         }
       },
@@ -13120,6 +13153,121 @@
           "shortName": "LabelService",
           "fullName": "google.apps.drive.labels.v2.LabelService",
           "methods": [
+            {
+              "shortName": "BatchDeleteLabelPermissions",
+              "fullName": "google.apps.drive.labels.v2.LabelService.BatchDeleteLabelPermissions",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=labels/*}/permissions:batchDelete"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=labels/*/revisions/*}/permissions:batchDelete"
+                }
+              ]
+            },
+            {
+              "shortName": "BatchUpdateLabelPermissions",
+              "fullName": "google.apps.drive.labels.v2.LabelService.BatchUpdateLabelPermissions",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=labels/*}/permissions:batchUpdate"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=labels/*/revisions/*}/permissions:batchUpdate"
+                }
+              ]
+            },
+            {
+              "shortName": "CreateLabel",
+              "fullName": "google.apps.drive.labels.v2.LabelService.CreateLabel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/labels"
+                }
+              ]
+            },
+            {
+              "shortName": "CreateLabelPermission",
+              "fullName": "google.apps.drive.labels.v2.LabelService.CreateLabelPermission",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=labels/*}/permissions"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=labels/*/revisions/*}/permissions"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteLabel",
+              "fullName": "google.apps.drive.labels.v2.LabelService.DeleteLabel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v2/{name=labels/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteLabelPermission",
+              "fullName": "google.apps.drive.labels.v2.LabelService.DeleteLabelPermission",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v2/{name=labels/*/permissions/*}"
+                },
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v2/{name=labels/*/revisions/*/permissions/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DeltaUpdateLabel",
+              "fullName": "google.apps.drive.labels.v2.LabelService.DeltaUpdateLabel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{name=labels/*}:delta"
+                }
+              ]
+            },
+            {
+              "shortName": "DisableLabel",
+              "fullName": "google.apps.drive.labels.v2.LabelService.DisableLabel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{name=labels/*}:disable"
+                }
+              ]
+            },
+            {
+              "shortName": "EnableLabel",
+              "fullName": "google.apps.drive.labels.v2.LabelService.EnableLabel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{name=labels/*}:enable"
+                }
+              ]
+            },
             {
               "shortName": "GetLabel",
               "fullName": "google.apps.drive.labels.v2.LabelService.GetLabel",
@@ -13132,6 +13280,58 @@
               ]
             },
             {
+              "shortName": "GetLabelLimits",
+              "fullName": "google.apps.drive.labels.v2.LabelService.GetLabelLimits",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/limits/label"
+                }
+              ]
+            },
+            {
+              "shortName": "GetUserCapabilities",
+              "fullName": "google.apps.drive.labels.v2.LabelService.GetUserCapabilities",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{name=users/*/capabilities}"
+                }
+              ]
+            },
+            {
+              "shortName": "ListLabelLocks",
+              "fullName": "google.apps.drive.labels.v2.LabelService.ListLabelLocks",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{parent=labels/*}/locks"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{parent=labels/*/revisions/*}/locks"
+                }
+              ]
+            },
+            {
+              "shortName": "ListLabelPermissions",
+              "fullName": "google.apps.drive.labels.v2.LabelService.ListLabelPermissions",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{parent=labels/*}/permissions"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{parent=labels/*/revisions/*}/permissions"
+                }
+              ]
+            },
+            {
               "shortName": "ListLabels",
               "fullName": "google.apps.drive.labels.v2.LabelService.ListLabels",
               "mode": "UNARY",
@@ -13139,6 +13339,43 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v2/labels"
+                }
+              ]
+            },
+            {
+              "shortName": "PublishLabel",
+              "fullName": "google.apps.drive.labels.v2.LabelService.PublishLabel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{name=labels/*}:publish"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateLabelCopyMode",
+              "fullName": "google.apps.drive.labels.v2.LabelService.UpdateLabelCopyMode",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{name=labels/*}:updateLabelCopyMode"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateLabelPermission",
+              "fullName": "google.apps.drive.labels.v2.LabelService.UpdateLabelPermission",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v2/{parent=labels/*}/permissions"
+                },
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v2/{parent=labels/*/revisions/*}/permissions"
                 }
               ]
             }
@@ -22386,6 +22623,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1alpha/{parent=projects/*/locations/*}/clusters"
+                }
+              ]
+            },
+            {
+              "shortName": "ListDatabases",
+              "fullName": "google.cloud.alloydb.v1alpha.AlloyDBAdmin.ListDatabases",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/clusters/*}/databases"
                 }
               ]
             },
@@ -55339,37 +55587,37 @@
       "options": {
         "csharp_namespace": {
           "valueCounts": {
-            "Google.Cloud.DiscoveryEngine.V1Alpha": 19
+            "Google.Cloud.DiscoveryEngine.V1Alpha": 21
           }
         },
         "go_package": {
           "valueCounts": {
-            "cloud.google.com/go/discoveryengine/apiv1alpha/discoveryenginepb;discoveryenginepb": 19
+            "cloud.google.com/go/discoveryengine/apiv1alpha/discoveryenginepb;discoveryenginepb": 21
           }
         },
         "java_multiple_files": {
           "valueCounts": {
-            "true": 19
+            "true": 21
           }
         },
         "java_package": {
           "valueCounts": {
-            "com.google.cloud.discoveryengine.v1alpha": 19
+            "com.google.cloud.discoveryengine.v1alpha": 21
           }
         },
         "objc_class_prefix": {
           "valueCounts": {
-            "DISCOVERYENGINE": 19
+            "DISCOVERYENGINE": 21
           }
         },
         "php_namespace": {
           "valueCounts": {
-            "Google\\Cloud\\DiscoveryEngine\\V1alpha": 19
+            "Google\\Cloud\\DiscoveryEngine\\V1alpha": 21
           }
         },
         "ruby_package": {
           "valueCounts": {
-            "Google::Cloud::DiscoveryEngine::V1alpha": 19
+            "Google::Cloud::DiscoveryEngine::V1alpha": 21
           }
         }
       },
@@ -55411,6 +55659,10 @@
                 {
                   "httpMethod": "POST",
                   "path": "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}:converse"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}:converse"
                 }
               ]
             },
@@ -55426,6 +55678,10 @@
                 {
                   "httpMethod": "POST",
                   "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/engines/*}/conversations"
                 }
               ]
             },
@@ -55441,6 +55697,10 @@
                 {
                   "httpMethod": "DELETE",
                   "path": "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}"
+                },
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1alpha/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}"
                 }
               ]
             },
@@ -55456,6 +55716,10 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{name=projects/*/locations/*/collections/*/engines/*/conversations/*}"
                 }
               ]
             },
@@ -55471,6 +55735,10 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*}/conversations"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/engines/*}/conversations"
                 }
               ]
             },
@@ -55486,6 +55754,10 @@
                 {
                   "httpMethod": "PATCH",
                   "path": "/v1alpha/{conversation.name=projects/*/locations/*/collections/*/dataStores/*/conversations/*}"
+                },
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1alpha/{conversation.name=projects/*/locations/*/collections/*/engines/*/conversations/*}"
                 }
               ]
             }
@@ -55909,9 +56181,168 @@
           ]
         },
         {
+          "shortName": "SearchTuningService",
+          "fullName": "google.cloud.discoveryengine.v1alpha.SearchTuningService",
+          "methods": [
+            {
+              "shortName": "TrainCustomModel",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SearchTuningService.TrainCustomModel",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{data_store=projects/*/locations/*/collections/*/dataStores/*}:trainCustomModel"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "shortName": "SiteSearchEngineService",
           "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService",
           "methods": [
+            {
+              "shortName": "BatchCreateTargetSites",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.BatchCreateTargetSites",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/dataStores/*/siteSearchEngine}/targetSites:batchCreate"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}/targetSites:batchCreate"
+                }
+              ]
+            },
+            {
+              "shortName": "BatchVerifyTargetSites",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.BatchVerifyTargetSites",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:batchVerifyTargetSites"
+                }
+              ]
+            },
+            {
+              "shortName": "CreateTargetSite",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.CreateTargetSite",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/dataStores/*/siteSearchEngine}/targetSites"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}/targetSites"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteTargetSite",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.DeleteTargetSite",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1alpha/{name=projects/*/locations/*/dataStores/*/siteSearchEngine/targetSites/*}"
+                },
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/targetSites/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DisableAdvancedSiteSearch",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.DisableAdvancedSiteSearch",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{site_search_engine=projects/*/locations/*/dataStores/*/siteSearchEngine}:disableAdvancedSiteSearch"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{site_search_engine=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:disableAdvancedSiteSearch"
+                }
+              ]
+            },
+            {
+              "shortName": "EnableAdvancedSiteSearch",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.EnableAdvancedSiteSearch",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{site_search_engine=projects/*/locations/*/dataStores/*/siteSearchEngine}:enableAdvancedSiteSearch"
+                },
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1alpha/{site_search_engine=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:enableAdvancedSiteSearch"
+                }
+              ]
+            },
+            {
+              "shortName": "FetchDomainVerificationStatus",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.FetchDomainVerificationStatus",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{site_search_engine=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:fetchDomainVerificationStatus"
+                }
+              ]
+            },
+            {
+              "shortName": "GetSiteSearchEngine",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.GetSiteSearchEngine",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{name=projects/*/locations/*/dataStores/*/siteSearchEngine}"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetTargetSite",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.GetTargetSite",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{name=projects/*/locations/*/dataStores/*/siteSearchEngine/targetSites/*}"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/targetSites/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "ListTargetSites",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.ListTargetSites",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/dataStores/*/siteSearchEngine}/targetSites"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}/targetSites"
+                }
+              ]
+            },
             {
               "shortName": "RecrawlUris",
               "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.RecrawlUris",
@@ -55924,6 +56355,21 @@
                 {
                   "httpMethod": "POST",
                   "path": "/v1alpha/{site_search_engine=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}:recrawlUris"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateTargetSite",
+              "fullName": "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.UpdateTargetSite",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1alpha/{target_site.name=projects/*/locations/*/dataStores/*/siteSearchEngine/targetSites/*}"
+                },
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1alpha/{target_site.name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/targetSites/*}"
                 }
               ]
             }
@@ -56006,6 +56452,7 @@
         "google.cloud.discoveryengine.v1alpha.RecommendationService",
         "google.cloud.discoveryengine.v1alpha.SchemaService",
         "google.cloud.discoveryengine.v1alpha.SearchService",
+        "google.cloud.discoveryengine.v1alpha.SearchTuningService",
         "google.cloud.discoveryengine.v1alpha.SiteSearchEngineService",
         "google.cloud.discoveryengine.v1alpha.UserEventService",
         "google.cloud.location.Locations",
@@ -61669,7 +62116,8 @@
         "google/api",
         "google/cloud/gkemulticloud/v1",
         "google/longrunning",
-        "google/protobuf"
+        "google/protobuf",
+        "google/type"
       ],
       "options": {
         "csharp_namespace": {
@@ -61727,6 +62175,17 @@
                 {
                   "httpMethod": "DELETE",
                   "path": "/v1/{name=projects/*/locations/*/attachedClusters/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GenerateAttachedClusterAgentToken",
+              "fullName": "google.cloud.gkemulticloud.v1.AttachedClusters.GenerateAttachedClusterAgentToken",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{attached_cluster=projects/*/locations/*/attachedClusters/*}:generateAttachedClusterAgentToken"
                 }
               ]
             },
@@ -61858,6 +62317,17 @@
               ]
             },
             {
+              "shortName": "GenerateAwsClusterAgentToken",
+              "fullName": "google.cloud.gkemulticloud.v1.AwsClusters.GenerateAwsClusterAgentToken",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{aws_cluster=projects/*/locations/*/awsClusters/*}:generateAwsClusterAgentToken"
+                }
+              ]
+            },
+            {
               "shortName": "GetAwsCluster",
               "fullName": "google.cloud.gkemulticloud.v1.AwsClusters.GetAwsCluster",
               "mode": "UNARY",
@@ -61869,6 +62339,17 @@
               ]
             },
             {
+              "shortName": "GetAwsJsonWebKeys",
+              "fullName": "google.cloud.gkemulticloud.v1.AwsClusters.GetAwsJsonWebKeys",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{aws_cluster=projects/*/locations/*/awsClusters/*}/jwks"
+                }
+              ]
+            },
+            {
               "shortName": "GetAwsNodePool",
               "fullName": "google.cloud.gkemulticloud.v1.AwsClusters.GetAwsNodePool",
               "mode": "UNARY",
@@ -61876,6 +62357,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{name=projects/*/locations/*/awsClusters/*/awsNodePools/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetAwsOpenIdConfig",
+              "fullName": "google.cloud.gkemulticloud.v1.AwsClusters.GetAwsOpenIdConfig",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{aws_cluster=projects/*/locations/*/awsClusters/*}/.well-known/openid-configuration"
                 }
               ]
             },
@@ -61909,6 +62401,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{parent=projects/*/locations/*/awsClusters/*}/awsNodePools"
+                }
+              ]
+            },
+            {
+              "shortName": "RollbackAwsNodePoolUpdate",
+              "fullName": "google.cloud.gkemulticloud.v1.AwsClusters.RollbackAwsNodePoolUpdate",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{name=projects/*/locations/*/awsClusters/*/awsNodePools/*}:rollback"
                 }
               ]
             },
@@ -62018,6 +62521,17 @@
               ]
             },
             {
+              "shortName": "GenerateAzureClusterAgentToken",
+              "fullName": "google.cloud.gkemulticloud.v1.AzureClusters.GenerateAzureClusterAgentToken",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{azure_cluster=projects/*/locations/*/azureClusters/*}:generateAzureClusterAgentToken"
+                }
+              ]
+            },
+            {
               "shortName": "GetAzureClient",
               "fullName": "google.cloud.gkemulticloud.v1.AzureClusters.GetAzureClient",
               "mode": "UNARY",
@@ -62040,6 +62554,17 @@
               ]
             },
             {
+              "shortName": "GetAzureJsonWebKeys",
+              "fullName": "google.cloud.gkemulticloud.v1.AzureClusters.GetAzureJsonWebKeys",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{azure_cluster=projects/*/locations/*/azureClusters/*}/jwks"
+                }
+              ]
+            },
+            {
               "shortName": "GetAzureNodePool",
               "fullName": "google.cloud.gkemulticloud.v1.AzureClusters.GetAzureNodePool",
               "mode": "UNARY",
@@ -62047,6 +62572,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{name=projects/*/locations/*/azureClusters/*/azureNodePools/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetAzureOpenIdConfig",
+              "fullName": "google.cloud.gkemulticloud.v1.AzureClusters.GetAzureOpenIdConfig",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{azure_cluster=projects/*/locations/*/azureClusters/*}/.well-known/openid-configuration"
                 }
               ]
             },
@@ -64123,9 +64659,9 @@
       "id": "google.cloud.location",
       "directory": "google/cloud/location",
       "version": "location",
-      "hostName": "cloud.googleapis.com",
-      "title": "Cloud Metadata API",
-      "description": "This API provides static metadata about Google Cloud Platform. Currently, it only provides basic information about Google Cloud locations, such as zones, regions, and countries.",
+      "hostName": "cloudlocations.googleapis.com",
+      "title": "Cloud Location API",
+      "description": "<UNKNOWN - NO SERVICE CONFIG DOCUMENTATION SUMMARY>",
       "importDirectories": [
         "google/api",
         "google/protobuf"
@@ -64190,11 +64726,11 @@
           ]
         }
       ],
-      "configFile": "cloud.yaml",
+      "configFile": "location.yaml",
       "serviceConfigApiNames": [
         "google.cloud.location.Locations"
       ],
-      "nameInServiceConfig": "cloud.googleapis.com"
+      "nameInServiceConfig": "cloudlocations.googleapis.com"
     },
     {
       "id": "google.cloud.managedidentities.v1",
@@ -66519,32 +67055,32 @@
       "options": {
         "csharp_namespace": {
           "valueCounts": {
-            "Google.Cloud.NetApp.V1": 8
+            "Google.Cloud.NetApp.V1": 11
           }
         },
         "go_package": {
           "valueCounts": {
-            "cloud.google.com/go/netapp/apiv1/netapppb;netapppb": 8
+            "cloud.google.com/go/netapp/apiv1/netapppb;netapppb": 11
           }
         },
         "java_multiple_files": {
           "valueCounts": {
-            "true": 8
+            "true": 11
           }
         },
         "java_package": {
           "valueCounts": {
-            "com.google.cloud.netapp.v1": 8
+            "com.google.cloud.netapp.v1": 11
           }
         },
         "php_namespace": {
           "valueCounts": {
-            "Google\\Cloud\\NetApp\\V1": 8
+            "Google\\Cloud\\NetApp\\V1": 11
           }
         },
         "ruby_package": {
           "valueCounts": {
-            "Google::Cloud::NetApp::V1": 8
+            "Google::Cloud::NetApp::V1": 11
           }
         }
       },
@@ -66561,6 +67097,39 @@
                 {
                   "httpMethod": "POST",
                   "path": "/v1/{parent=projects/*/locations/*}/activeDirectories"
+                }
+              ]
+            },
+            {
+              "shortName": "CreateBackup",
+              "fullName": "google.cloud.netapp.v1.NetApp.CreateBackup",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{parent=projects/*/locations/*/backupVaults/*}/backups"
+                }
+              ]
+            },
+            {
+              "shortName": "CreateBackupPolicy",
+              "fullName": "google.cloud.netapp.v1.NetApp.CreateBackupPolicy",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{parent=projects/*/locations/*}/backupPolicies"
+                }
+              ]
+            },
+            {
+              "shortName": "CreateBackupVault",
+              "fullName": "google.cloud.netapp.v1.NetApp.CreateBackupVault",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v1/{parent=projects/*/locations/*}/backupVaults"
                 }
               ]
             },
@@ -66627,6 +67196,39 @@
                 {
                   "httpMethod": "DELETE",
                   "path": "/v1/{name=projects/*/locations/*/activeDirectories/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteBackup",
+              "fullName": "google.cloud.netapp.v1.NetApp.DeleteBackup",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1/{name=projects/*/locations/*/backupVaults/*/backups/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteBackupPolicy",
+              "fullName": "google.cloud.netapp.v1.NetApp.DeleteBackupPolicy",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1/{name=projects/*/locations/*/backupPolicies/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteBackupVault",
+              "fullName": "google.cloud.netapp.v1.NetApp.DeleteBackupVault",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1/{name=projects/*/locations/*/backupVaults/*}"
                 }
               ]
             },
@@ -66708,6 +67310,39 @@
               ]
             },
             {
+              "shortName": "GetBackup",
+              "fullName": "google.cloud.netapp.v1.NetApp.GetBackup",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{name=projects/*/locations/*/backupVaults/*/backups/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetBackupPolicy",
+              "fullName": "google.cloud.netapp.v1.NetApp.GetBackupPolicy",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{name=projects/*/locations/*/backupPolicies/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetBackupVault",
+              "fullName": "google.cloud.netapp.v1.NetApp.GetBackupVault",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{name=projects/*/locations/*/backupVaults/*}"
+                }
+              ]
+            },
+            {
               "shortName": "GetKmsConfig",
               "fullName": "google.cloud.netapp.v1.NetApp.GetKmsConfig",
               "mode": "UNARY",
@@ -66770,6 +67405,39 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v1/{parent=projects/*/locations/*}/activeDirectories"
+                }
+              ]
+            },
+            {
+              "shortName": "ListBackupPolicies",
+              "fullName": "google.cloud.netapp.v1.NetApp.ListBackupPolicies",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{parent=projects/*/locations/*}/backupPolicies"
+                }
+              ]
+            },
+            {
+              "shortName": "ListBackupVaults",
+              "fullName": "google.cloud.netapp.v1.NetApp.ListBackupVaults",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{parent=projects/*/locations/*}/backupVaults"
+                }
+              ]
+            },
+            {
+              "shortName": "ListBackups",
+              "fullName": "google.cloud.netapp.v1.NetApp.ListBackups",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v1/{parent=projects/*/locations/*/backupVaults/*}/backups"
                 }
               ]
             },
@@ -66880,6 +67548,39 @@
                 {
                   "httpMethod": "PATCH",
                   "path": "/v1/{active_directory.name=projects/*/locations/*/activeDirectories/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateBackup",
+              "fullName": "google.cloud.netapp.v1.NetApp.UpdateBackup",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1/{backup.name=projects/*/locations/*/backupVaults/*/backups/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateBackupPolicy",
+              "fullName": "google.cloud.netapp.v1.NetApp.UpdateBackupPolicy",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1/{backup_policy.name=projects/*/locations/*/backupPolicies/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateBackupVault",
+              "fullName": "google.cloud.netapp.v1.NetApp.UpdateBackupVault",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v1/{backup_vault.name=projects/*/locations/*/backupVaults/*}"
                 }
               ]
             },
@@ -70488,6 +71189,17 @@
           "fullName": "google.cloud.orgpolicy.v2.OrgPolicy",
           "methods": [
             {
+              "shortName": "CreateCustomConstraint",
+              "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.CreateCustomConstraint",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v2/{parent=organizations/*}/customConstraints"
+                }
+              ]
+            },
+            {
               "shortName": "CreatePolicy",
               "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.CreatePolicy",
               "mode": "UNARY",
@@ -70507,6 +71219,17 @@
               ]
             },
             {
+              "shortName": "DeleteCustomConstraint",
+              "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.DeleteCustomConstraint",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v2/{name=organizations/*/customConstraints/*}"
+                }
+              ]
+            },
+            {
               "shortName": "DeletePolicy",
               "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.DeletePolicy",
               "mode": "UNARY",
@@ -70522,6 +71245,17 @@
                 {
                   "httpMethod": "DELETE",
                   "path": "/v2/{name=organizations/*/policies/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetCustomConstraint",
+              "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.GetCustomConstraint",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{name=organizations/*/customConstraints/*}"
                 }
               ]
             },
@@ -70583,6 +71317,17 @@
               ]
             },
             {
+              "shortName": "ListCustomConstraints",
+              "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.ListCustomConstraints",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{parent=organizations/*}/customConstraints"
+                }
+              ]
+            },
+            {
               "shortName": "ListPolicies",
               "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies",
               "mode": "UNARY",
@@ -70598,6 +71343,17 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v2/{parent=organizations/*}/policies"
+                }
+              ]
+            },
+            {
+              "shortName": "UpdateCustomConstraint",
+              "fullName": "google.cloud.orgpolicy.v2.OrgPolicy.UpdateCustomConstraint",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "PATCH",
+                  "path": "/v2/{custom_constraint.name=organizations/*/customConstraints/*}"
                 }
               ]
             },
@@ -88466,7 +89222,7 @@
               "bindings": [
                 {
                   "httpMethod": "POST",
-                  "path": "/v1/{parent=projects/*/locations/*/voices/*}:SynthesizeLongAudio"
+                  "path": "/v1/{parent=projects/*/locations/*}:synthesizeLongAudio"
                 }
               ]
             }
@@ -88572,7 +89328,7 @@
               "bindings": [
                 {
                   "httpMethod": "POST",
-                  "path": "/v1beta1/{parent=projects/*/locations/*/voices/*}:SynthesizeLongAudio"
+                  "path": "/v1beta1/{parent=projects/*/locations/*}:synthesizeLongAudio"
                 }
               ]
             }
@@ -89365,43 +90121,44 @@
       "description": "Integrates text translation into your website or application.",
       "importDirectories": [
         "google/api",
+        "google/cloud/translate/v3",
         "google/longrunning",
         "google/protobuf"
       ],
       "options": {
         "cc_enable_arenas": {
           "valueCounts": {
-            "true": 1
+            "true": 3
           }
         },
         "csharp_namespace": {
           "valueCounts": {
-            "Google.Cloud.Translate.V3": 1
+            "Google.Cloud.Translate.V3": 3
           }
         },
         "go_package": {
           "valueCounts": {
-            "cloud.google.com/go/translate/apiv3/translatepb;translatepb": 1
+            "cloud.google.com/go/translate/apiv3/translatepb;translatepb": 3
           }
         },
         "java_multiple_files": {
           "valueCounts": {
-            "true": 1
+            "true": 3
           }
         },
         "java_package": {
           "valueCounts": {
-            "com.google.cloud.translate.v3": 1
+            "com.google.cloud.translate.v3": 3
           }
         },
         "php_namespace": {
           "valueCounts": {
-            "Google\\Cloud\\Translate\\V3": 1
+            "Google\\Cloud\\Translate\\V3": 3
           }
         },
         "ruby_package": {
           "valueCounts": {
-            "Google::Cloud::Translate::V3": 1
+            "Google::Cloud::Translate::V3": 3
           }
         }
       },
@@ -89410,6 +90167,17 @@
           "shortName": "TranslationService",
           "fullName": "google.cloud.translation.v3.TranslationService",
           "methods": [
+            {
+              "shortName": "AdaptiveMtTranslate",
+              "fullName": "google.cloud.translation.v3.TranslationService.AdaptiveMtTranslate",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v3/{parent=projects/*/locations/*}:adaptiveMtTranslate"
+                }
+              ]
+            },
             {
               "shortName": "BatchTranslateDocument",
               "fullName": "google.cloud.translation.v3.TranslationService.BatchTranslateDocument",
@@ -89433,6 +90201,17 @@
               ]
             },
             {
+              "shortName": "CreateAdaptiveMtDataset",
+              "fullName": "google.cloud.translation.v3.TranslationService.CreateAdaptiveMtDataset",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v3/{parent=projects/*/locations/*}/adaptiveMtDatasets"
+                }
+              ]
+            },
+            {
               "shortName": "CreateGlossary",
               "fullName": "google.cloud.translation.v3.TranslationService.CreateGlossary",
               "mode": "UNARY",
@@ -89440,6 +90219,28 @@
                 {
                   "httpMethod": "POST",
                   "path": "/v3/{parent=projects/*/locations/*}/glossaries"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteAdaptiveMtDataset",
+              "fullName": "google.cloud.translation.v3.TranslationService.DeleteAdaptiveMtDataset",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "DeleteAdaptiveMtFile",
+              "fullName": "google.cloud.translation.v3.TranslationService.DeleteAdaptiveMtFile",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*/adaptiveMtFiles/*}"
                 }
               ]
             },
@@ -89470,6 +90271,28 @@
               ]
             },
             {
+              "shortName": "GetAdaptiveMtDataset",
+              "fullName": "google.cloud.translation.v3.TranslationService.GetAdaptiveMtDataset",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*}"
+                }
+              ]
+            },
+            {
+              "shortName": "GetAdaptiveMtFile",
+              "fullName": "google.cloud.translation.v3.TranslationService.GetAdaptiveMtFile",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*/adaptiveMtFiles/*}"
+                }
+              ]
+            },
+            {
               "shortName": "GetGlossary",
               "fullName": "google.cloud.translation.v3.TranslationService.GetGlossary",
               "mode": "UNARY",
@@ -89492,6 +90315,54 @@
                 {
                   "httpMethod": "GET",
                   "path": "/v3/{parent=projects/*}/supportedLanguages"
+                }
+              ]
+            },
+            {
+              "shortName": "ImportAdaptiveMtFile",
+              "fullName": "google.cloud.translation.v3.TranslationService.ImportAdaptiveMtFile",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "POST",
+                  "path": "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*}:importAdaptiveMtFile"
+                }
+              ]
+            },
+            {
+              "shortName": "ListAdaptiveMtDatasets",
+              "fullName": "google.cloud.translation.v3.TranslationService.ListAdaptiveMtDatasets",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v3/{parent=projects/*/locations/*}/adaptiveMtDatasets"
+                }
+              ]
+            },
+            {
+              "shortName": "ListAdaptiveMtFiles",
+              "fullName": "google.cloud.translation.v3.TranslationService.ListAdaptiveMtFiles",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*}/adaptiveMtFiles"
+                }
+              ]
+            },
+            {
+              "shortName": "ListAdaptiveMtSentences",
+              "fullName": "google.cloud.translation.v3.TranslationService.ListAdaptiveMtSentences",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*/adaptiveMtFiles/*}/adaptiveMtSentences"
+                },
+                {
+                  "httpMethod": "GET",
+                  "path": "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*}/adaptiveMtSentences"
                 }
               ]
             },
@@ -98847,32 +99718,32 @@
       "options": {
         "csharp_namespace": {
           "valueCounts": {
-            "Google.Cloud.Datastore.V1": 4
+            "Google.Cloud.Datastore.V1": 5
           }
         },
         "go_package": {
           "valueCounts": {
-            "google.golang.org/genproto/googleapis/datastore/v1;datastore": 4
+            "google.golang.org/genproto/googleapis/datastore/v1;datastore": 5
           }
         },
         "java_multiple_files": {
           "valueCounts": {
-            "true": 4
+            "true": 5
           }
         },
         "java_package": {
           "valueCounts": {
-            "com.google.datastore.v1": 4
+            "com.google.datastore.v1": 5
           }
         },
         "php_namespace": {
           "valueCounts": {
-            "Google\\Cloud\\Datastore\\V1": 4
+            "Google\\Cloud\\Datastore\\V1": 5
           }
         },
         "ruby_package": {
           "valueCounts": {
-            "Google::Cloud::Datastore::V1": 4
+            "Google::Cloud::Datastore::V1": 5
           }
         }
       },
@@ -100747,6 +101618,23 @@
       },
       "services": [
         {
+          "shortName": "ExportService",
+          "fullName": "google.devtools.cloudprofiler.v2.ExportService",
+          "methods": [
+            {
+              "shortName": "ListProfiles",
+              "fullName": "google.devtools.cloudprofiler.v2.ExportService.ListProfiles",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "GET",
+                  "path": "/v2/{parent=projects/*}/profiles"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "shortName": "ProfilerService",
           "fullName": "google.devtools.cloudprofiler.v2.ProfilerService",
           "methods": [
@@ -100788,6 +101676,7 @@
       ],
       "configFile": "cloudprofiler_v2.yaml",
       "serviceConfigApiNames": [
+        "google.devtools.cloudprofiler.v2.ExportService",
         "google.devtools.cloudprofiler.v2.ProfilerService"
       ],
       "nameInServiceConfig": "cloudprofiler.googleapis.com"
@@ -102274,6 +103163,17 @@
               ]
             },
             {
+              "shortName": "DeleteDatabase",
+              "fullName": "google.firestore.admin.v1.FirestoreAdmin.DeleteDatabase",
+              "mode": "UNARY",
+              "bindings": [
+                {
+                  "httpMethod": "DELETE",
+                  "path": "/v1/{name=projects/*/databases/*}"
+                }
+              ]
+            },
+            {
               "shortName": "DeleteIndex",
               "fullName": "google.firestore.admin.v1.FirestoreAdmin.DeleteIndex",
               "mode": "UNARY",
@@ -102423,38 +103323,38 @@
       "options": {
         "csharp_namespace": {
           "valueCounts": {
-            "Google.Cloud.Firestore.V1": 7
+            "Google.Cloud.Firestore.V1": 8
           }
         },
         "go_package": {
           "valueCounts": {
-            "cloud.google.com/go/firestore/apiv1/firestorepb;firestorepb": 7
+            "cloud.google.com/go/firestore/apiv1/firestorepb;firestorepb": 8
           }
         },
         "java_multiple_files": {
           "valueCounts": {
-            "true": 7
+            "true": 8
           }
         },
         "java_package": {
           "valueCounts": {
-            "com.google.firestore.v1": 7
+            "com.google.firestore.v1": 8
           }
         },
         "objc_class_prefix": {
           "valueCounts": {
             "": 1,
-            "GCFS": 6
+            "GCFS": 7
           }
         },
         "php_namespace": {
           "valueCounts": {
-            "Google\\Cloud\\Firestore\\V1": 7
+            "Google\\Cloud\\Firestore\\V1": 8
           }
         },
         "ruby_package": {
           "valueCounts": {
-            "Google::Cloud::Firestore::V1": 7
+            "Google::Cloud::Firestore::V1": 8
           }
         }
       },
@@ -110804,6 +111704,81 @@
         "google.spanner.v1.Spanner"
       ],
       "nameInServiceConfig": "spanner.googleapis.com"
+    },
+    {
+      "id": "google.storage.control.v2",
+      "directory": "google/storage/control/v2",
+      "version": "v2",
+      "majorVersion": "v2",
+      "hostName": "storage.googleapis.com",
+      "title": "Cloud Storage API",
+      "description": "Lets you store and retrieve potentially-large, immutable data objects.",
+      "importDirectories": [
+        "google/api",
+        "google/longrunning",
+        "google/protobuf"
+      ],
+      "options": {
+        "go_package": {
+          "valueCounts": {
+            "cloud.google.com/go/storage/control/apiv2/storagecontrolpb;storagecontrolpb": 1
+          }
+        },
+        "java_multiple_files": {
+          "valueCounts": {
+            "true": 1
+          }
+        },
+        "java_package": {
+          "valueCounts": {
+            "com.google.storage.control.v2": 1
+          }
+        }
+      },
+      "services": [
+        {
+          "shortName": "StorageControl",
+          "fullName": "google.storage.control.v2.StorageControl",
+          "methods": [
+            {
+              "shortName": "CreateFolder",
+              "fullName": "google.storage.control.v2.StorageControl.CreateFolder",
+              "mode": "UNARY"
+            },
+            {
+              "shortName": "DeleteFolder",
+              "fullName": "google.storage.control.v2.StorageControl.DeleteFolder",
+              "mode": "UNARY"
+            },
+            {
+              "shortName": "GetFolder",
+              "fullName": "google.storage.control.v2.StorageControl.GetFolder",
+              "mode": "UNARY"
+            },
+            {
+              "shortName": "GetStorageLayout",
+              "fullName": "google.storage.control.v2.StorageControl.GetStorageLayout",
+              "mode": "UNARY"
+            },
+            {
+              "shortName": "ListFolders",
+              "fullName": "google.storage.control.v2.StorageControl.ListFolders",
+              "mode": "UNARY"
+            },
+            {
+              "shortName": "RenameFolder",
+              "fullName": "google.storage.control.v2.StorageControl.RenameFolder",
+              "mode": "UNARY"
+            }
+          ]
+        }
+      ],
+      "configFile": "storage_v2.yaml",
+      "serviceConfigApiNames": [
+        "google.longrunning.Operations",
+        "google.storage.control.v2.StorageControl"
+      ],
+      "nameInServiceConfig": "storage.googleapis.com"
     },
     {
       "id": "google.storage.v2",

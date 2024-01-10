@@ -36,11 +36,11 @@ enum QuotaSafetyCheck {
 
   // Validates that a quota mutation would not cause the consumer's effective
   // limit to be lower than the consumer's quota usage.
-  LIMIT_DECREASE_BELOW_USAGE = 1;
+  QUOTA_DECREASE_BELOW_USAGE = 1;
 
   // Validates that a quota mutation would not cause the consumer's effective
   // limit to decrease by more than 10 percent.
-  LIMIT_DECREASE_PERCENTAGE_TOO_HIGH = 2;
+  QUOTA_DECREASE_PERCENTAGE_TOO_HIGH = 2;
 }
 
 // QuotaInfo represents information about a particular quota for a given
@@ -147,10 +147,10 @@ message QuotaIncreaseEligibility {
     INELIGIBILITY_REASON_UNSPECIFIED = 0;
 
     // The container is not linked with a valid billing account.
-    NO_VALID_BILLING_ACCOUNT = 2;
+    NO_VALID_BILLING_ACCOUNT = 1;
 
     // Other reasons.
-    OTHER = 3;
+    OTHER = 2;
   }
 
   // Whether a higher quota value can be requested for the quota.
@@ -227,20 +227,16 @@ message QuotaPreference {
   // The reason / justification for this quota preference.
   string justification = 11;
 
-  // Optional. Input only. An optional email address that can be used for quota
-  // related communication between the Google Cloud and the user in case the
-  // Google Cloud needs further information to make a decision on whether the
-  // user preferred quota can be granted.
+  // Required. Input only. An email address that can be used for quota related
+  // communication between the Google Cloud and the user in case the Google
+  // Cloud needs further information to make a decision on whether the user
+  // preferred quota can be granted.
   //
   // The Google account for the email address must have quota update permission
   // for the project, folder or organization this quota preference is for.
-  //
-  // If no contact email address is provided, or the provided email address does
-  // not have the required quota update permission, the quota preference request
-  // will be denied in case further information is required to make a decision.
   string contact_email = 12 [
     (google.api.field_behavior) = INPUT_ONLY,
-    (google.api.field_behavior) = OPTIONAL
+    (google.api.field_behavior) = REQUIRED
   ];
 }
 
